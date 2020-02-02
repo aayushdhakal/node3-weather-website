@@ -1,5 +1,3 @@
-console.log('Client side Javascript loaded');
-
 const url = 'http://puzzle.mead.io/puzzle';
 
    const weatherForm = document.querySelector('form');
