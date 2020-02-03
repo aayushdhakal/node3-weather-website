@@ -9,7 +9,7 @@ const url = 'http://puzzle.mead.io/puzzle';
       const location = search.value;
       messageOne.textContent = 'Loading...';
       messageTwo.textContent = '';
-      const url2 = 'http://localhost:3000/weather?address='+location;
+      const url2 = '/weather?address='+location;
 
       fetch(url2)
          .then(response => response.json())
