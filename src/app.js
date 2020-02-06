@@ -8,6 +8,7 @@ const geocode = require('./utils/geocode');
 const app = express();
 
 const port =process.env.PORT || 3000;
+const creatorName ='Aayush dh'
 
 //Define path for Express config
 const publicDirectorypath = path.join(__dirname,'../public');//path for static pages and css or javascript for front end
@@ -26,14 +27,14 @@ app.use(express.static(publicDirectorypath));
 app.get('',(req,res)=>{//route handler
    res.render('index',{
       title:'Weather',
-      name:'Aayush Dh'
+      name:creatorName
    }); // index.hbs 
 });
 
 app.get('/about',(req,res)=>{
    res.render('about',{
       title:'About Me',
-      name:'Aayush',
+      name:creatorName,
       information:'This site is created by Aayush.It uses data from the mapbox.com and darksky.net'
    });//about.hbs
 });
@@ -42,7 +43,7 @@ app.get('/help',(req,res)=>{
    res.render('help',{
       helpText:'This site is used to gather information regarding the weather and it provides the information of current weather',
       title:'Help',
-      name:'Aayush'
+      name:creatorName
    });
 });
  
@@ -87,7 +88,7 @@ app.get('/products',(req,res)=>{
 app.get('/help/*',(req,res)=>{
    res.render('404',{
       title:'404 error',
-      name:'Aayush dh',
+      name:creatorName,
       errorMessage:'Help article not found'
    });
 });
@@ -96,7 +97,7 @@ app.get('/help/*',(req,res)=>{
 app.get('*',(req,res)=>{
    res.render('404',{
       title:'404',
-      name:'Aayush Dh',
+      name:creatorName,
       errorMessage:'Page not found'
    });
 });
