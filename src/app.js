@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
-
+console.log('hello');
 const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
 
@@ -33,13 +33,14 @@ app.get('',(req,res)=>{//route handler
 app.get('/about',(req,res)=>{
    res.render('about',{
       title:'About Me',
-      name:'Aayush'
+      name:'Aayush',
+      information:'This site is created by Aayush.It uses data from the mapbox.com and darksky.net'
    });//about.hbs
 });
 
 app.get('/help',(req,res)=>{
    res.render('help',{
-      helpText:'This is some helpful text',
+      helpText:'This site is used to gather information regarding the weather and it provides the information of current weather',
       title:'Help',
       name:'Aayush'
    });
@@ -101,5 +102,5 @@ app.get('*',(req,res)=>{
 });
 
 app.listen(port,()=>{
-      console.log('Express is up and running in the port'+port);
+      console.log('Express is up and running in the port '+port);
 });
